@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         TextView textfun1 = findViewById(R.id.sample_text);
         TextView textfun2 = findViewById(R.id.sample_text2);
         TextView textfun3 = findViewById(R.id.sample_text3);
