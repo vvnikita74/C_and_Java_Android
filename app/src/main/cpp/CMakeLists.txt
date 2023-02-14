@@ -26,7 +26,7 @@ set_target_properties(spdlog PROPERTIES IMPORTED_LOCATION
 
 add_library(mbedcrypto SHARED IMPORTED)
 set_target_properties(mbedcrypto PROPERTIES IMPORTED_LOCATION
-        /Users/yungnik/AndroidStudioProjects/mbedtls/build/arm64-v8a/library/libmbedcrypto.so)
+        ${CMAKE_CURRENT_SOURCE_DIR}/../nativeLibs/arm64-v8a/libmbedcrypto.so)
 
 target_include_directories(firstlab PUBLIC
         /Users/yungnik/AndroidStudioProjects/mbedtls/mbedtls/include
