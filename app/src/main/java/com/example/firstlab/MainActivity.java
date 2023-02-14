@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         // Testing randomBytes - random bytes output
         byte [] rnd_bytes = randomBytes(16);
         String rnd_str = new String(rnd_bytes, StandardCharsets.UTF_16);
-        textfun2.setText("randomBytes:" + rnd_str);
+        textfun2.setText("randomBytes: " + rnd_str);
 
         // Testing stringFromJNI - print a predefined string
         textfun3.setText("stringFromJNI: " + stringFromJNI());
