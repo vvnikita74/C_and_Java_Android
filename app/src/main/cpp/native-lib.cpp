@@ -20,7 +20,7 @@ auto android_logger = spdlog::android_logger_mt("android", "firstlab_ndk");
 
 extern "C"
 JNIEXPORT jstring
-Java_com_example_firstlab_MainActivity_stringFromJNI(JNIEnv* env, jobject) {
+Java_com_example_firstlab_FirstTaskActivity_stringFromJNI(JNIEnv* env, jobject) {
     std::string hello = "Send from Iphone";
     LOG_INFO("Hello from c++ %d", 2023);
     SLOG_INFO("Hello from spdlog {0}", 2023);
@@ -30,7 +30,7 @@ Java_com_example_firstlab_MainActivity_stringFromJNI(JNIEnv* env, jobject) {
 
 extern "C"
 JNIEXPORT jint JNICALL
-Java_com_example_firstlab_MainActivity_initRng(JNIEnv *env, jclass clazz) {
+Java_com_example_firstlab_FirstTaskActivity_initRng(JNIEnv *env, jclass clazz) {
     mbedtls_entropy_init( &entropy );
     mbedtls_ctr_drbg_init( &ctr_drbg );
 
@@ -42,7 +42,7 @@ Java_com_example_firstlab_MainActivity_initRng(JNIEnv *env, jclass clazz) {
 
 extern "C"
 JNIEXPORT jbyteArray JNICALL
-Java_com_example_firstlab_MainActivity_randomBytes(JNIEnv *env, jclass, jint no) {
+Java_com_example_firstlab_FirstTaskActivity_randomBytes(JNIEnv *env, jclass, jint no) {
     uint8_t * buf = new uint8_t [no];
     mbedtls_ctr_drbg_random(&ctr_drbg, buf, no);
     jbyteArray rnd = env->NewByteArray(no);
@@ -54,7 +54,7 @@ Java_com_example_firstlab_MainActivity_randomBytes(JNIEnv *env, jclass, jint no)
 
 extern "C"
 JNIEXPORT jbyteArray JNICALL
-Java_com_example_firstlab_MainActivity_encrypt(JNIEnv *env, jclass, jbyteArray key, jbyteArray data) {
+Java_com_example_firstlab_FirstTaskActivity_encrypt(JNIEnv *env, jclass, jbyteArray key, jbyteArray data) {
     jsize ksz = env->GetArrayLength(key);
     jsize dsz = env->GetArrayLength(data);
 
@@ -93,7 +93,7 @@ Java_com_example_firstlab_MainActivity_encrypt(JNIEnv *env, jclass, jbyteArray k
 
 
 extern "C" JNIEXPORT jbyteArray JNICALL
-Java_com_example_firstlab_MainActivity_decrypt(JNIEnv *env, jclass, jbyteArray key, jbyteArray data) {
+Java_com_example_firstlab_FirstTaskActivity_decrypt(JNIEnv *env, jclass, jbyteArray key, jbyteArray data) {
     jsize ksz = env->GetArrayLength(key);
     jsize dsz = env->GetArrayLength(data);
 
