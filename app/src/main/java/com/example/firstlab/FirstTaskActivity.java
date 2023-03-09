@@ -76,7 +76,7 @@ public class FirstTaskActivity extends AppCompatActivity {
         nextbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), FirstTaskActivity.class);
+                Intent intent = new Intent(getApplicationContext(), SecondTaskActivity.class);
                 startActivity(intent);
             }
         });

@@ -20,9 +20,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FirstTaskActivity">
+        <activity android:name=".FirstTaskActivity"></activity>
+        <activity android:name=".SecondTaskActivity"></activity>
 
-        </activity>
     </application>
 
 </manifest>
