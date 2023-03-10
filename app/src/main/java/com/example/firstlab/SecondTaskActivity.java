@@ -34,8 +34,7 @@ public class SecondTaskActivity extends AppCompatActivity {
         Button backBtn = findViewById(R.id.backButton);
 
         nextBtn.setOnClickListener(view -> {
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(intent);
+            Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show();
         });
 
         backBtn.setOnClickListener(view -> {
