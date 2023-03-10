@@ -124,4 +124,3 @@ Java_com_example_firstlab_FirstTaskActivity_decrypt(JNIEnv *env, jclass, jbyteAr
     env->ReleaseByteArrayElements(data, pdata, 0);
     return dout;
 }
-
